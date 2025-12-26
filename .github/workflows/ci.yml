@@ -1,0 +1,72 @@
+name: CI/CD
+
+on:
+    push:
+        branches: [ main ]
+        tags: [ 'v*' ]
+    pull_request:
+        branches: [ main ]
+    workflow_dispatch:
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v4
+
+            -   name: Setup Node.js
+                uses: actions/setup-node@v4
+                with:
+                    node-version: 'lts/*'
+                    cache: 'yarn'
+
+            -   name: Install dependencies
+                run: yarn install --frozen-lockfile
+
+            -   name: Test
+                run: yarn test:all
+
+            -   name: Build
+                run: yarn build:all
+
+            -   name: Upload artifacts
+                uses: actions/upload-artifact@v4
+                with:
+                    name: dist
+                    path: dist/
+
+    deploy:
+        needs: build-and-test
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v4
+
+            -   name: Setup Node.js
+                uses: actions/setup-node@v4
+                with:
+                    node-version: 'lts/*'
+                    registry-url: 'https://registry.npmjs.org'
+
+            -   name: Download artifacts
+                uses: actions/download-artifact@v4
+                with:
+                    name: dist
+                    path: dist/
+
+            -   name: Set Version from Tag
+                run: |
+                    VERSION=${GITHUB_REF_NAME#v}
+                    echo "Setting version to $VERSION"
+                    npm version $VERSION --no-git-tag-version --allow-same-version --prefix dist/dontdrinkandroot/ngx-extensions
+                    npm version $VERSION --no-git-tag-version --allow-same-version --prefix dist/dontdrinkandroot/ngx-material-extensions
+
+            -   name: Publish @dontdrinkandroot/ngx-extensions
+                run: npm publish dist/dontdrinkandroot/ngx-extensions --access public
+                env:
+                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            -   name: Publish @dontdrinkandroot/ngx-material-extensions
+                run: npm publish dist/dontdrinkandroot/ngx-material-extensions --access public
+                env:
+                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

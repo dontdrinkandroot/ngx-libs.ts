@@ -6,8 +6,11 @@
         "start": "ng serve",
         "build": "ng build",
         "build:libs": "ng build @dontdrinkandroot/ngx-extensions && ng build @dontdrinkandroot/ngx-material-extensions",
+        "build:app": "ng build @dontdrinkandroot/angular-material-example",
+        "build:all": "npm run build:libs && npm run build:app",
         "serve:example": "ng serve --watch --configuration development @dontdrinkandroot/angular-material-example",
-        "test": "ng test"
+        "test": "ng test",
+        "test:all": "ng test @dontdrinkandroot/ngx-extensions --watch=false && ng test @dontdrinkandroot/ngx-material-extensions --watch=false && ng test @dontdrinkandroot/angular-material-example --watch=false"
     },
     "prettier": {
         "printWidth": 100,
