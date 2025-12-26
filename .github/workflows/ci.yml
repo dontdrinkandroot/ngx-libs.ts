@@ -39,6 +39,9 @@ jobs:
         needs: build-and-test
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
         runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
         steps:
             -   uses: actions/checkout@v4
 
@@ -62,11 +65,7 @@ jobs:
                     npm version $VERSION --no-git-tag-version --allow-same-version --prefix dist/dontdrinkandroot/ngx-material-extensions
 
             -   name: Publish @dontdrinkandroot/ngx-extensions
-                run: npm publish dist/dontdrinkandroot/ngx-extensions --access public
-                env:
-                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                run: npm publish dist/dontdrinkandroot/ngx-extensions --access public --provenance
 
             -   name: Publish @dontdrinkandroot/ngx-material-extensions
-                run: npm publish dist/dontdrinkandroot/ngx-material-extensions --access public
-                env:
-                    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                run: npm publish dist/dontdrinkandroot/ngx-material-extensions --access public --provenance
