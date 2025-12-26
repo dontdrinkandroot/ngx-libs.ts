@@ -1,0 +1,13 @@
+<div class="mx-half">
+    <ddr-mat-filter (filterChanged)="filterValue.set($event)" ddrMatPrefixIcon="search"></ddr-mat-filter>
+
+    <mat-list>
+        @for (person of filteredPersons(); track person.id) {
+            <mat-list-item>
+                <img matListItemAvatar [src]="person.avatar"/>
+                <h3 matListItemTitle>{{ person.name }}</h3>
+                <p matListItemLine>{{ person.email }}</p>
+            </mat-list-item>
+        }
+    </mat-list>
+</div>

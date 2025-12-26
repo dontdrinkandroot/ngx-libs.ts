@@ -1,0 +1,64 @@
+<mat-list>
+    <mat-list-item>Simple Item</mat-list-item>
+    <mat-list-item>
+        <h3 matListItemTitle>2 Lines Title</h3>
+        <div matListItemLine>Second Line</div>
+    </mat-list-item>
+    <mat-list-item [lines]="3">
+        <div matListItemTitle>3 Lines Title</div>
+        <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata sanctus est Lorem ipsum dolor sit amet.</span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <h3 matListItemTitle>1 Lines Title</h3>
+        <div matListItemMeta>
+            <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+            </button>
+        </div>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <h3 matListItemTitle>2 Lines Title</h3>
+        <div matListItemLine>Second Line</div>
+        <div matListItemMeta>
+            <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+            </button>
+        </div>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <h3 matListItemTitle>3 Lines Title</h3>
+        <div matListItemLine>Second Line</div>
+        <div matListItemLine>Third Line</div>
+        <button mat-icon-button matListItemMeta>
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <img matListItemAvatar [src]="avatars[0]"/>
+        <h3 matListItemTitle>1 Lines Title</h3>
+        <div matListItemMeta>Meta</div>
+    </mat-list-item>
+    <mat-list-item>
+        <img matListItemAvatar [src]="avatars[1]"/>
+        <h3 matListItemTitle>2 Lines Title</h3>
+        <div matListItemLine>Second Line</div>
+        <div matListItemMeta>Meta</div>
+    </mat-list-item>
+    <mat-list-item>
+        <img matListItemAvatar [src]="avatars[2]"/>
+        <h3 matListItemTitle>3 Lines Title</h3>
+        <div matListItemLine>Second Line</div>
+        <div matListItemLine>Third Line</div>
+        <div matListItemMeta>Meta</div>
+    </mat-list-item>
+</mat-list>

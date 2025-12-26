@@ -1,0 +1,63 @@
+<ddr-mat-sidenav-container>
+    <div slot="mat-sidenav">
+        <mat-toolbar [ddrMatToolbarFixedTop]="['d-max-md-none']">
+            <h1>Material Example</h1>
+        </mat-toolbar>
+
+        <mat-nav-list class="ddr-mat-sidenav-nav-list">
+            <a mat-list-item
+               [routerLink]="['/', 'typography']"
+               [routerLinkActive]="['mdc-list-item--activated']"
+            >
+                Typography
+            </a>
+            <mat-divider></mat-divider>
+            <div matSubheader class="mat-label-large">Components</div>
+            <a mat-list-item
+               [routerLink]="['/', 'components', 'button']"
+               [routerLinkActive]="['mdc-list-item--activated']"
+            >
+                Button
+            </a>
+            <a mat-list-item
+               [routerLink]="['/', 'components', 'card']"
+               [routerLinkActive]="['mdc-list-item--activated']"
+            >
+                Card
+            </a>
+            <a mat-list-item
+               [routerLink]="['/', 'components', 'list']"
+               [routerLinkActive]="['mdc-list-item--activated']"
+            >
+                List
+            </a>
+            <mat-divider></mat-divider>
+            <div matSubheader class="mat-label-large">Extensions</div>
+            <a mat-list-item
+               [routerLink]="['/', 'extensions', 'filter']"
+               [routerLinkActive]="['mdc-list-item--activated']"
+            >
+                Filter
+            </a>
+            <a mat-list-item
+               [routerLink]="['/', 'extensions', 'fixed-fab']"
+               [routerLinkActive]="['mdc-list-item--activated']"
+            >
+                Fixed Fab
+            </a>
+            <a mat-list-item
+               [routerLink]="['/', 'extensions', 'sidenav']"
+               [routerLinkActive]="['mdc-list-item--activated']"
+            >
+                Sidenav
+            </a>
+        </mat-nav-list>
+    </div>
+    <div slot="mat-sidenav-content">
+        <mat-toolbar ddrMatToolbarFixedTop class="ddr-mat-toolbar-icon-start-mobile">
+            <ddr-mat-sidenav-toggle></ddr-mat-sidenav-toggle>
+            <h1>{{ title() }}</h1>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </div>
+</ddr-mat-sidenav-container>

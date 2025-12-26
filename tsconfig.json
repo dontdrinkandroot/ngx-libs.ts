@@ -1,0 +1,53 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "paths": {
+            "@dontdrinkandroot/ngx-extensions": [
+                "./dist/@dontdrinkandroot/ngx-extensions"
+            ],
+            "@dontdrinkandroot/ngx-material-extensions": [
+                "./dist/@dontdrinkandroot/ngx-material-extensions"
+            ]
+        },
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "isolatedModules": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "ES2022",
+        "module": "preserve"
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
+    },
+    "files": [],
+    "references": [
+        {
+            "path": "./projects/dontdrinkandroot/ngx-extensions/tsconfig.lib.json"
+        },
+        {
+            "path": "./projects/dontdrinkandroot/ngx-extensions/tsconfig.spec.json"
+        },
+        {
+            "path": "./projects/dontdrinkandroot/ngx-material-extensions/tsconfig.lib.json"
+        },
+        {
+            "path": "./projects/dontdrinkandroot/ngx-material-extensions/tsconfig.spec.json"
+        },
+        {
+            "path": "./projects/dontdrinkandroot/angular-material-example/tsconfig.app.json"
+        },
+        {
+            "path": "./projects/dontdrinkandroot/angular-material-example/tsconfig.spec.json"
+        }
+    ]
+}

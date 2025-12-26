@@ -1,0 +1,54 @@
+@use '../variables' as ddr-vars;
+
+@each $prefix, $property in ddr-vars.$paddings {
+    @each $suffix, $size in ddr-vars.$spacers {
+        .#{$prefix}-#{$suffix} {
+            #{$property}: #{$size} !important;
+        }
+    }
+}
+
+@each $suffix, $size in ddr-vars.$spacers {
+    .px-#{$suffix} {
+        padding-left: #{$size} !important;
+        padding-right: #{$size} !important;
+    }
+
+    .py-#{$suffix} {
+        padding-top: #{$size} !important;
+        padding-bottom: #{$size} !important;
+    }
+}
+
+@each $prefix, $property in ddr-vars.$margins {
+    @each $suffix, $size in ddr-vars.$spacers {
+        .#{$prefix}-#{$suffix} {
+            #{$property}: #{$size} !important;
+        }
+    }
+}
+
+@each $suffix, $size in ddr-vars.$spacers {
+    .mx-#{$suffix} {
+        margin-left: #{$size} !important;
+        margin-right: #{$size} !important;
+    }
+
+    .my-#{$suffix} {
+        margin-top: #{$size} !important;
+        margin-bottom: #{$size} !important;
+    }
+}
+
+.me-auto {
+    margin-right: auto !important;
+}
+
+.ms-auto {
+    margin-left: auto !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

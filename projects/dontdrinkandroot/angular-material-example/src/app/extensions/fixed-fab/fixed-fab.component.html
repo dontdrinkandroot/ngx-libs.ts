@@ -1,0 +1,11 @@
+<mat-list>
+    @for (entry of entries(); track $index) {
+        <mat-list-item>
+            {{ entry }}
+        </mat-list-item>
+    }
+</mat-list>
+
+<button mat-fab ddrMatFabFixed (click)="addEntry()">
+    <mat-icon>add</mat-icon>
+</button>

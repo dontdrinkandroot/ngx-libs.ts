@@ -1,0 +1,62 @@
+@use '@angular/material' as mat;
+@use 'variables' as ddr-vars;
+
+html {
+    color-scheme: light dark;
+    @include mat.theme((
+            color: (
+                    primary: ddr-vars.$primary,
+                    tertiary: ddr-vars.$tertiary,
+            ),
+            typography: (
+                    plain-family: 'Roboto Flex Variable'
+            ),
+            density: ddr-vars.$density
+    ));
+}
+
+.mdc-button {
+    &.mat-secondary {
+        @include mat.button-overrides((
+                filled-container-color: var(--mat-sys-secondary),
+                outlined-label-text-color: var(--mat-sys-secondary),
+                protected-label-text-color: var(--mat-sys-secondary),
+                text-label-text-color: var(--mat-sys-secondary)
+        ));
+    }
+
+    &.mat-tertiary {
+        @include mat.button-overrides((
+                filled-container-color: var(--mat-sys-tertiary),
+                outlined-label-text-color: var(--mat-sys-tertiary),
+                protected-label-text-color: var(--mat-sys-tertiary),
+                text-label-text-color: var(--mat-sys-tertiary)
+        ));
+    }
+
+    &.mat-error {
+        @include mat.button-overrides((
+                filled-container-color: var(--mat-sys-error),
+                outlined-label-text-color: var(--mat-sys-error),
+                protected-label-text-color: var(--mat-sys-error),
+                text-label-text-color: var(--mat-sys-error)
+        ));
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+// Hack? https://github.com/angular/components/issues/30444
+$typo-theme: mat.define-theme((
+        typography: (
+                plain-family: 'Roboto Flex Variable'
+        )
+)) !default;
+@include mat.typography-hierarchy($typo-theme);
+
+body {
+    margin: 0;
+    font-family: 'Roboto Flex Variable', 'Helvetica Neue', sans-serif;
+}

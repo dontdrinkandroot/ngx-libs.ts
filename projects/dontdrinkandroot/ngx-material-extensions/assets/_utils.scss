@@ -1,0 +1,45 @@
+@use "./utils/display";
+@use "./utils/spacing";
+@use "./utils/color";
+@use 'mixins' as ddr-mixins;
+
+.flex-row {
+    flex-direction: row !important;
+}
+
+.flex-column {
+    flex-direction: column !important;
+}
+
+.flex-auto {
+    @include ddr-mixins.flex-auto;
+}
+
+.d-grid {
+    grid-gap: 1rem;
+
+    &.equal-columns {
+        grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;
+    }
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-overflow-ellipsis {
+    @include ddr-mixins.text-overflow-ellipsis;
+}
+
+
+.list-unstyled {
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}

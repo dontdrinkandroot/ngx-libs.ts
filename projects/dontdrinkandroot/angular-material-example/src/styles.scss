@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+
+@use "@dontdrinkandroot/ngx-material-extensions/assets/style";
+@use "@dontdrinkandroot/ngx-material-extensions/assets/fonts";
+
+#component-button {
+    button {
+        margin-right: .5rem !important;
+    }
+}

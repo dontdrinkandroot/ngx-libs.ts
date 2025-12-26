@@ -1,0 +1,13 @@
+<mat-sidenav-container [ngClass]="mode()">
+    <mat-sidenav
+        #sidenav
+        [mode]="mode()"
+        [opened]="opened()"
+        [fixedInViewport]="true"
+    >
+        <ng-content select="[slot=mat-sidenav]"></ng-content>
+    </mat-sidenav>
+    <mat-sidenav-content #sidenavContent>
+        <ng-content select="[slot=mat-sidenav-content]"></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,142 @@
+@use '@angular/material' as mat;
+@use 'variables' as ddr-vars;
+@use 'mixins' as ddr-mixins;
+@use 'utils' as ddr-utils;
+
+.mat-sidenav-container {
+
+    .mat-sidenav {
+
+        &.mat-drawer-over {
+            max-width: 90vw;
+        }
+
+        .mat-mdc-nav-list.ddr-mat-sidenav-nav-list {
+            .mat-mdc-list-item {
+                width: auto;
+                margin-right: .5rem;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+
+    .mat-sidenav-content {
+        min-height: 100vh;
+    }
+
+    &.side {
+        .mat-sidenav {
+            .ddr-mat-toolbar-fixed-top-container {
+                .mat-toolbar {
+                    width: 360px;
+                }
+            }
+        }
+
+        .mat-sidenav-content {
+            .ddr-mat-toolbar-fixed-top-container {
+                .mat-toolbar {
+                    left: 360px;
+                    right: 0;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &.over {
+        .mat-sidenav {
+            .ddr-mat-toolbar-fixed-top-container {
+                .mat-toolbar {
+                    width: 360px;
+                }
+            }
+        }
+    }
+}
+
+.ddr-mat-fab-fixed-container {
+
+    height: calc(ddr-vars.$fab-height + 2rem);
+
+    .mdc-fab {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+.mat-toolbar {
+
+    .ddr-mat-heading {
+        @include ddr-mixins.text-overflow-ellipsis;
+        @include ddr-mixins.flex-auto;
+    }
+
+    ddr-mat-sidenav-toggle {
+        margin-right: .25rem;
+    }
+
+    &.ddr-mat-toolbar-icon-start {
+        padding-left: .25rem;
+    }
+
+    &.ddr-mat-toolbar-icon-end {
+        padding-right: .25rem;
+    }
+
+    @include ddr-mixins.media-mobile {
+        &.ddr-mat-toolbar-icon-start-mobile {
+            padding-left: .25rem;
+        }
+
+        &.ddr-mat-toolbar-icon-end-mobile {
+            padding-right: .25rem;
+        }
+    }
+
+    @include ddr-mixins.media-desktop {
+        &.ddr-mat-toolbar-icon-start-desktop {
+            padding-left: .25rem;
+        }
+
+        &.ddr-mat-toolbar-icon-end-desktop {
+            padding-right: .25rem;
+        }
+    }
+}
+
+.ddr-mat-toolbar-fixed-top-container {
+    .mat-toolbar {
+        position: fixed;
+        top: 0;
+        z-index: 2;
+    }
+
+    height: var(--mat-toolbar-mobile-height, 56px);
+    @media (min-width: ddr-vars.$breakpoint-sm) {
+        height: var(--mat-toolbar-standard-height, 64px);
+    }
+}
+
+ddr-filter {
+
+    width: 100%;
+
+    .mat-mdc-form-field {
+        width: 100%;
+    }
+}
+
+p.mat-mdc-list-item-line {
+    margin-bottom: 0;
+}
+
+body.ddr-mat-scrolled {
+    .ddr-mat-toolbar-fixed-top-container {
+        .mat-toolbar {
+            background: var(--mat-sys-surface-container)
+        }
+    }
+}

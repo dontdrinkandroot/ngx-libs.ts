@@ -1,0 +1,136 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "cli": {
+        "packageManager": "yarn"
+    },
+    "newProjectRoot": "projects",
+    "projects": {
+        "@dontdrinkandroot/ngx-extensions": {
+            "projectType": "library",
+            "root": "projects/dontdrinkandroot/ngx-extensions",
+            "sourceRoot": "projects/dontdrinkandroot/ngx-extensions/src",
+            "prefix": "ddr",
+            "architect": {
+                "build": {
+                    "builder": "@angular/build:ng-packagr",
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/dontdrinkandroot/ngx-extensions/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/dontdrinkandroot/ngx-extensions/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular/build:unit-test",
+                    "options": {
+                        "tsConfig": "projects/dontdrinkandroot/ngx-extensions/tsconfig.spec.json"
+                    }
+                }
+            }
+        },
+        "@dontdrinkandroot/ngx-material-extensions": {
+            "projectType": "library",
+            "root": "projects/dontdrinkandroot/ngx-material-extensions",
+            "sourceRoot": "projects/dontdrinkandroot/ngx-material-extensions/src",
+            "prefix": "ddr",
+            "architect": {
+                "build": {
+                    "builder": "@angular/build:ng-packagr",
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/dontdrinkandroot/ngx-material-extensions/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/dontdrinkandroot/ngx-material-extensions/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "test": {
+                    "builder": "@angular/build:unit-test",
+                    "options": {
+                        "tsConfig": "projects/dontdrinkandroot/ngx-material-extensions/tsconfig.spec.json"
+                    }
+                }
+            }
+        },
+        "@dontdrinkandroot/angular-material-example": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "projects/dontdrinkandroot/angular-material-example",
+            "sourceRoot": "projects/dontdrinkandroot/angular-material-example/src",
+            "prefix": "app",
+            "architect": {
+                "build": {
+                    "builder": "@angular/build:application",
+                    "options": {
+                        "browser": "projects/dontdrinkandroot/angular-material-example/src/main.ts",
+                        "tsConfig": "projects/dontdrinkandroot/angular-material-example/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "stylePreprocessorOptions": {
+                            "includePaths": [
+                                "dist"
+                            ]
+                        },
+                        "assets": [
+                            {
+                                "glob": "**/*",
+                                "input": "projects/dontdrinkandroot/angular-material-example/public"
+                            }
+                        ],
+                        "styles": [
+                            "projects/dontdrinkandroot/angular-material-example/src/styles.scss"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "1MB",
+                                    "maximumError": "1.5MB"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "4kB",
+                                    "maximumError": "8kB"
+                                }
+                            ],
+                            "outputHashing": "all",
+                            "serviceWorker": "projects/dontdrinkandroot/angular-material-example/ngsw-config.json"
+                        },
+                        "development": {
+                            "optimization": false,
+                            "extractLicenses": false,
+                            "sourceMap": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "@angular/build:dev-server",
+                    "configurations": {
+                        "production": {
+                            "buildTarget": "@dontdrinkandroot/angular-material-example:build:production"
+                        },
+                        "development": {
+                            "buildTarget": "@dontdrinkandroot/angular-material-example:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "test": {
+                    "builder": "@angular/build:unit-test"
+                }
+            }
+        }
+    }
+}

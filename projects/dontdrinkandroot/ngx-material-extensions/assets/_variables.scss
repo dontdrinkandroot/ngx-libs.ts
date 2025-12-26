@@ -1,0 +1,60 @@
+@use '@angular/material' as mat;
+
+$primary: mat.$azure-palette !default;
+$tertiary: mat.$magenta-palette !default;
+$density: 0 !default;
+
+$spacer: 1rem !default;
+$spacers: (
+        none: 0,
+        quarter: $spacer * .25,
+        half: $spacer * .5,
+        full: $spacer,
+        one-half: $spacer * 1.5,
+        double: $spacer * 2
+) !default;
+
+$paddings: (
+        'p': 'padding',
+        'ps': 'padding-left',
+        'pe': 'padding-right',
+        'pt': 'padding-top',
+        'pb': 'padding-bottom'
+) !default;
+
+$margins: (
+        'm': 'margin',
+        'ms': 'margin-left',
+        'me': 'margin-right',
+        'mt': 'margin-top',
+        'mb': 'margin-bottom'
+) !default;
+
+$displays: (
+        none: none,
+        inline: inline,
+        inline-block: inline-block,
+        block: block,
+        grid: grid,
+        inline-grid: inline-grid,
+        table: table,
+        table-cell: table-cell,
+        table-row: table-row,
+        flex: flex,
+        inline-flex: inline-flex
+) !default;
+
+$fab-height: 56px !default;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1920px;
+$breakpoints: (
+        xs: $breakpoint-xs,
+        sm: $breakpoint-sm,
+        md: $breakpoint-md,
+        lg: $breakpoint-lg,
+        xl: $breakpoint-xl
+) !default;
