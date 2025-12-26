@@ -23,11 +23,11 @@ jobs:
             -   name: Install dependencies
                 run: yarn install --frozen-lockfile
 
-            -   name: Test
-                run: yarn test:all
-
             -   name: Build
                 run: yarn build:all
+
+            -   name: Test
+                run: yarn test:all
 
             -   name: Upload artifacts
                 uses: actions/upload-artifact@v4
