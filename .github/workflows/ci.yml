@@ -18,16 +18,19 @@ jobs:
                 uses: actions/setup-node@v4
                 with:
                     node-version: 'lts/*'
-                    cache: 'yarn'
+
+            -   uses: pnpm/action-setup@v4
+                with:
+                    version: 10.26.2
 
             -   name: Install dependencies
-                run: yarn install --frozen-lockfile
+                run: pnpm install --frozen-lockfile
 
             -   name: Build
-                run: yarn build:all
+                run: pnpm build:all
 
             -   name: Test
-                run: yarn test:all
+                run: pnpm test:all
 
             -   name: Upload artifacts
                 uses: actions/upload-artifact@v4
