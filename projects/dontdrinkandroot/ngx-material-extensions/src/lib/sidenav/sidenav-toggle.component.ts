@@ -6,7 +6,7 @@ import {MatIconButton} from "@angular/material/button";
 @Component({
     selector: 'ddr-mat-sidenav-toggle',
     template: `
-        <button mat-icon-button (click)="toggleSidenav()">
+        <button matIconButton (click)="toggleSidenav()">
             <mat-icon>menu</mat-icon>
         </button>`,
     imports: [
