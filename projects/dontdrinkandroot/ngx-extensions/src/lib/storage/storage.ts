@@ -1,8 +1,4 @@
-import {InjectionToken} from "@angular/core";
-
-export const DDR_STORAGE_PREFIX = new InjectionToken<string>('storage-prefix');
-
-export abstract class StorageService
+export abstract class Storage
 {
     public abstract store<T>(key: string, value: T): void;
 
