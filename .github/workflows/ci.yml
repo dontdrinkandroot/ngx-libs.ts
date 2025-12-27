@@ -61,11 +61,11 @@ jobs:
                 run: |
                     VERSION=${GITHUB_REF_NAME#v}
                     echo "Setting version to $VERSION"
-                    npm version $VERSION --no-git-tag-version --allow-same-version --prefix dist/dontdrinkandroot/ngx-extensions
-                    npm version $VERSION --no-git-tag-version --allow-same-version --prefix dist/dontdrinkandroot/ngx-material-extensions
+                    npm version $VERSION --no-git-tag-version --allow-same-version --prefix dist/@dontdrinkandroot/ngx-extensions
+                    npm version $VERSION --no-git-tag-version --allow-same-version --prefix dist/@dontdrinkandroot/ngx-material-extensions
 
             -   name: Publish @dontdrinkandroot/ngx-extensions
-                run: npm publish dist/dontdrinkandroot/ngx-extensions --access public --provenance
+                run: npm publish dist/@dontdrinkandroot/ngx-extensions --access public --provenance
 
             -   name: Publish @dontdrinkandroot/ngx-material-extensions
-                run: npm publish dist/dontdrinkandroot/ngx-material-extensions --access public --provenance
+                run: npm publish dist/@dontdrinkandroot/ngx-material-extensions --access public --provenance
