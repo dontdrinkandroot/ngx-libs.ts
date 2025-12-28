@@ -13,6 +13,14 @@ html {
             ),
             density: ddr-vars.$density
     ));
+
+    --mat-sys-success: #{mat.get-theme-color(mat.define-theme((color: (primary: ddr-vars.$success))), primary, 40)};
+    --mat-sys-warning: #{mat.get-theme-color(mat.define-theme((color: (primary: ddr-vars.$warning))), primary, 40)};
+
+    @media (prefers-color-scheme: dark) {
+        --mat-sys-success: #{mat.get-theme-color(mat.define-theme((color: (primary: ddr-vars.$success, theme-type: dark))), primary, 80)};
+        --mat-sys-warning: #{mat.get-theme-color(mat.define-theme((color: (primary: ddr-vars.$warning, theme-type: dark))), primary, 80)};
+    }
 }
 
 .mdc-button {
@@ -31,6 +39,24 @@ html {
                 outlined-label-text-color: var(--mat-sys-tertiary),
                 protected-label-text-color: var(--mat-sys-tertiary),
                 text-label-text-color: var(--mat-sys-tertiary)
+        ));
+    }
+
+    &.mat-success {
+        @include mat.button-overrides((
+                filled-container-color: var(--mat-sys-success),
+                outlined-label-text-color: var(--mat-sys-success),
+                protected-label-text-color: var(--mat-sys-success),
+                text-label-text-color: var(--mat-sys-success)
+        ));
+    }
+
+    &.mat-warning {
+        @include mat.button-overrides((
+                filled-container-color: var(--mat-sys-warning),
+                outlined-label-text-color: var(--mat-sys-warning),
+                protected-label-text-color: var(--mat-sys-warning),
+                text-label-text-color: var(--mat-sys-warning)
         ));
     }
 

@@ -26,10 +26,10 @@ This is a monorepo containing Angular libraries and an example application, focu
 - **Organization:** Logic is modularized within `lib` folders of each project, with a clear `public-api.ts` defining the exported surface.
 
 #### Development Workflow
-- **Building Libraries:** `yarn build:libs`
-- **Building App:** `yarn build:app`
-- **Testing:** `yarn test:all` (uses Vitest)
-- **Running Example:** `yarn serve:example`
+- **Building Libraries:** `pnpm build:libs`
+- **Building App:** `pnpm build:app`
+- **Testing:** `pnpm test:all` (uses Vitest)
+- **Running Example:** `pnpm serve:example`
 
 #### Important Files
 - `angular.json`: Workspace configuration.
