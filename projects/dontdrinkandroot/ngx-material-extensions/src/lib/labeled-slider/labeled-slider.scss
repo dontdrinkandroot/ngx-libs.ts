@@ -1,0 +1,45 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .label {
+        display: block;
+    }
+
+    &.horizontal {
+        flex-direction: row;
+        align-items: center;
+
+        .label {
+            display: inline-block;
+            width: 5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 0.5rem;
+        }
+
+        .mat-mdc-slider {
+            flex-grow: 1;
+        }
+    }
+
+    &.compact {
+        .mat-mdc-slider {
+            height: 36px;
+        }
+
+        .mdc-slider__input {
+            height: 22px;
+        }
+
+        ::ng-deep .mdc-slider__thumb {
+            height: 36px;
+            width: 36px;
+        }
+
+        //TODO: Fix the indicator circle size
+    }
+}
+

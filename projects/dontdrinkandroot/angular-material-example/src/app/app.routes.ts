@@ -6,6 +6,7 @@ import {ListComponent} from "./components/list/list.component";
 import {FilterComponent} from "./extensions/filter/filter.component";
 import {FixedFabComponent} from "./extensions/fixed-fab/fixed-fab.component";
 import {SidenavComponent} from "./extensions/sidenav/sidenav.component";
+import {LabeledSliderPage} from "./extensions/labeled-slider/labeled-slider-page";
 
 export const routes: Routes = [
     {
@@ -50,6 +51,11 @@ export const routes: Routes = [
                 path: 'sidenav',
                 title: 'Sidenav',
                 component: SidenavComponent
+            },
+            {
+                path: 'labeled-slider',
+                title: 'Labeled Slider',
+                component: LabeledSliderPage
             }
         ]
     }

@@ -8,6 +8,8 @@ export * from './lib/button/fab-fixed.directive'
 
 export * from './lib/filter/filter.component';
 
+export * from './lib/labeled-slider/labeled-slider';
+
 export * from './lib/sidenav/sidenav-container.component';
 export * from './lib/sidenav/sidenav-toggle.component';
 export * from './lib/sidenav/sidenav.service';

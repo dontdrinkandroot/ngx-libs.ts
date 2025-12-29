@@ -1,0 +1,4 @@
+<label class="mat-label-small label">{{ $label() }}</label>
+<mat-slider [min]="$min()" [max]="$max()" [step]="$step()" [disabled]="$disabled()" discrete class="flex-grow">
+    <input matSliderThumb [(ngModel)]="$value" [disabled]="$disabled()" (ngModelChange)="onModelChange()" (blur)="onBlur()">
+</mat-slider>
