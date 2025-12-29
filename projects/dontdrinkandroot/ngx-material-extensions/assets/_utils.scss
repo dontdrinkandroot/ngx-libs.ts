@@ -16,7 +16,7 @@
 }
 
 .d-grid {
-    grid-gap: 1rem;
+    gap: 1rem;
 
     &.equal-columns {
         grid-auto-columns: minmax(0, 1fr);

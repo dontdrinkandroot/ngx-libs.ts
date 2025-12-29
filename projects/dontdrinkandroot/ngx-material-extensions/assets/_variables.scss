@@ -32,6 +32,12 @@ $margins: (
         'mb': 'margin-bottom'
 ) !default;
 
+$gaps: (
+        'gap': 'gap',
+        'column-gap': 'column-gap',
+        'row-gap': 'row-gap'
+) !default;
+
 $displays: (
         none: none,
         inline: inline,

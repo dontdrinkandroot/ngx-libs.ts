@@ -52,3 +52,11 @@
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+@each $prefix, $property in ddr-vars.$gaps {
+    @each $suffix, $size in ddr-vars.$spacers {
+        .#{$prefix}-#{$suffix} {
+            #{$property}: #{$size} !important;
+        }
+    }
+}

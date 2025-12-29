@@ -3,6 +3,7 @@ import {TypographyComponent} from "./typography/typography.component";
 import {ButtonComponent} from "./components/button/button.component";
 import {CardComponent} from "./components/card/card.component";
 import {ListComponent} from "./components/list/list.component";
+import {FormPage} from "./components/form/form-page";
 import {FilterComponent} from "./extensions/filter/filter.component";
 import {FixedFabComponent} from "./extensions/fixed-fab/fixed-fab.component";
 import {SidenavComponent} from "./extensions/sidenav/sidenav.component";
@@ -31,6 +32,11 @@ export const routes: Routes = [
                 path: 'list',
                 title: 'List',
                 component: ListComponent
+            },
+            {
+                path: 'form',
+                title: 'Form',
+                component: FormPage
             }
         ]
     },
