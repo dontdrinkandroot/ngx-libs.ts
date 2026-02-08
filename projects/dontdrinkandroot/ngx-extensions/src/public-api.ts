@@ -24,4 +24,6 @@ export * from './lib/storage/storage';
 export * from './lib/logger/logger';
 export * from './lib/logger/console-logger';
 
+export * from './lib/signal/local-storage-signal'
+
 export * from './lib/typeguard/is-non-null';
