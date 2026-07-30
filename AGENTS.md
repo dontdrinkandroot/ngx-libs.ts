@@ -12,11 +12,11 @@ This is a monorepo containing Angular libraries and an example application, focu
 - `projects/dontdrinkandroot/angular-material-example`: A demonstration application showing how to use the libraries.
 
 #### Tech Stack
-- **Framework:** Angular 21+ (using standalone components and modern APIs).
-- **UI Components:** Angular Material 21+.
-- **Language:** TypeScript 5.9+.
-- **Package Manager:** Pnpm.
-- **Testing:** Vitest.
+- **Framework:** Angular 22 (using standalone components and modern APIs).
+- **UI Components:** Angular Material 22.
+- **Language:** TypeScript 6.0.
+- **Package Manager:** pnpm 10.26.2.
+- **Testing:** Vitest 4 with jsdom.
 - **Formatting:** Prettier.
 
 #### Key Conventions
@@ -29,11 +29,10 @@ This is a monorepo containing Angular libraries and an example application, focu
 - **Building Libraries:** `pnpm build:libs`
 - **Building App:** `pnpm build:app`
 - **Testing:** `pnpm test:all` (uses Vitest)
-- **Running Example:** `pnpm serve:example`
+- **Running Example:** `pnpm serve:example` (Angular CLI development server with the development configuration)
 
 #### Important Files
 - `angular.json`: Workspace configuration.
 - `package.json`: Dependencies and shared scripts.
 - `tsconfig.json`: Root TypeScript configuration with path mappings for libraries.
 - `dist/`: Build output directory (libraries must be built before they can be used by the example app if using path mappings).
-
