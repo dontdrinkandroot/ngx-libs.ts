@@ -1,0 +1,14 @@
+{
+    "install": {
+        "command": "pnpm install",
+        "description": "Install/update dependencies from the pnpm lockfile"
+    },
+    "build:all": {
+        "command": "pnpm build:all",
+        "description": "Build both libraries and the example app (pnpm build:libs && pnpm build:app)"
+    },
+    "test:all": {
+        "command": "pnpm test:all",
+        "description": "Run all library and example tests (Vitest, headless)"
+    }
+}

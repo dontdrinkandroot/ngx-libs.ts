@@ -15,7 +15,7 @@ This is a monorepo containing Angular libraries and an example application, focu
 - **Framework:** Angular 22 (using standalone components and modern APIs).
 - **UI Components:** Angular Material 22.
 - **Language:** TypeScript 6.0.
-- **Package Manager:** pnpm 10.26.2.
+- **Package Manager:** pnpm 12.9.1.
 - **Testing:** Vitest 4 with jsdom.
 - **Formatting:** Prettier.
 

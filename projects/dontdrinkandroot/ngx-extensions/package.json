@@ -3,14 +3,16 @@
     "version": "0.22.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dontdrinkandroot/ngx-libs.ts.git",
+        "url": "git+https://github.com/dontdrinkandroot/ngx-libs.ts.git",
         "directory": "projects/dontdrinkandroot/ngx-extensions"
     },
     "homepage": "https://github.com/dontdrinkandroot/ngx-libs.ts",
     "license": "Apache-2.0",
     "peerDependencies": {
         "@angular/common": "^22.0.0",
-        "@angular/core": "^22.0.0"
+        "@angular/core": "^22.0.0",
+        "@angular/router": "^22.0.0",
+        "rxjs": "^6.5.3 || ^7.4.0"
     },
     "dependencies": {
         "tslib": "^2.3.0"

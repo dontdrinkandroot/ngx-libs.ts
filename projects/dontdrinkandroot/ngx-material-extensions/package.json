@@ -3,18 +3,35 @@
     "version": "0.22.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/dontdrinkandroot/ngx-libs.ts.git",
+        "url": "git+https://github.com/dontdrinkandroot/ngx-libs.ts.git",
         "directory": "projects/dontdrinkandroot/ngx-material-extensions"
     },
     "homepage": "https://github.com/dontdrinkandroot/ngx-libs.ts",
     "license": "Apache-2.0",
     "peerDependencies": {
+        "@angular/cdk": "^22.0.0",
         "@angular/common": "^22.0.0",
         "@angular/core": "^22.0.0",
-        "@dontdrinkandroot/ngx-extensions": "^0.22.0"
+        "@angular/forms": "^22.0.0",
+        "@angular/material": "^22.0.0",
+        "@angular/router": "^22.0.0",
+        "@fontsource-variable/material-symbols-rounded": "^5.2.30",
+        "@fontsource-variable/roboto-flex": "^5.2.8",
+        "rxjs": "^6.5.3 || ^7.4.0"
+    },
+    "peerDependenciesMeta": {
+        "@fontsource-variable/material-symbols-rounded": {
+            "optional": true
+        },
+        "@fontsource-variable/roboto-flex": {
+            "optional": true
+        }
     },
     "dependencies": {
         "tslib": "^2.3.0"
+    },
+    "exports": {
+        "./assets/*": "./assets/*"
     },
     "sideEffects": false
 }
